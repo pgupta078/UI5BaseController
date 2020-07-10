@@ -1,0 +1,8 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form">
+	<Title text="DetailView1"/>
+	<Panel id="poDetail1Panel" headerText="{i18n>poDetailPanel}">
+		<form:SimpleForm editable="true" layout="ColumnLayout">
+			<Label text="{i18n>paneldetail1}"/>
+		</form:SimpleForm>
+	</Panel>
+</mvc:View>

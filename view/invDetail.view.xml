@@ -1,0 +1,13 @@
+<mvc:View controllerName="UI5Day4.controller.invDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page id="invDetailParent"
+	      title="{i18n>invDetailPage}" 
+	      showNavButton="true" 
+	      navButtonPress="onBack">
+		<ObjectHeader intro="{inv>Vbeln}"
+			          title="{inv>Matnr}">
+		</ObjectHeader>
+		<content>
+			<!--- insert by Routing -->
+		</content>	
+		</Page>
+	</mvc:View>

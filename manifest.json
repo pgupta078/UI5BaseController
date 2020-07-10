@@ -1,0 +1,105 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "UI5Day4",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "UI5Day4.view.app",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+			"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "UI5Day4.i18n.i18n"
+				}
+			},
+			"fields": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Fields.json"
+			},
+			"inv": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "invoice.json"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "UI5Day4.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true,
+				"bypassed": {
+					"target":"invalidRoute"
+				}
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "invHome",
+				"target": "invHome"
+			}, {
+				"pattern": "invDetail/{inv}",
+				"name": "invDetail",
+				"target": ["invDetail1","invDetail2"]
+			}],
+			"targets": {
+				"invHome": {
+					"viewId": "invoice",
+					"viewName": "invoice"
+
+				},
+				"invDetail": {
+					"viewId": "invDetail",
+					"viewName": "invDetail"
+				},
+					"invDetail1": {
+					"viewId": "invDetail1",
+					"parent":"invDetail",
+					"viewPath": "UI5Day4.view",
+					"viewName": "invDetail1",
+					"controlId": "invDetailParent",
+					"controlAggregation":"content"
+				},
+					"invDetail2": {
+					"viewId": "invDetail2",
+					"parent":"invDetail",
+					"viewPath": "UI5Day4.view",
+					"viewName": "invDetail2",
+					"controlId": "invDetailParent",
+					"controlAggregation":"content"
+				},
+				"invalidRoute": {
+					"viewId": "invalid",
+					"viewName": "invalid",
+					"transition":"show"
+				}
+			}
+		}
+	}
+}

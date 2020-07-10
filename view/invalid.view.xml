@@ -1,0 +1,10 @@
+<mvc:View
+controllerName="UI5Day4.controller.invalid"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc">
+<MessagePage
+title="{i18n>InvalPath}"
+description="{i18n>InvalPath.description}"
+showNavButton="true"
+navButtonPress="onBack"/>/>
+</mvc:View>
